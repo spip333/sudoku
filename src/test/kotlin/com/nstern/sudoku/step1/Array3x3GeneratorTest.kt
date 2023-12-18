@@ -22,7 +22,14 @@ class Array3x3GeneratorTest {
 
     @Test
     fun generateSudokuGridShouldGenerateAnArrayOf9x9() {
+        val domain: List<Int> = listOf(1, 2, 3)
         val result = sut.generateSudokuGrid()
-        assertThat(result.size).isEqualTo(9)
+        assertThat(result.size).isEqualTo(3)
+        for (i in 1..2) {
+            for (j in 1..2) {
+                assertThat(result[j]).containsAll(domain)
+            }
+        }
     }
+
 }
